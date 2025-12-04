@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Spinach Can Logo - High Resolution SVG
+  Version: 5.0.3
+
+  Original dimensions: 70x115px
+  This SVG is scalable to any size while maintaining quality
+
+  Colors:
+  - spinach-neon: #00ff88
+  - carbon (background for tab): #141414
+
+  Usage: Logo oficial Spinach com lata e triângulo de crescimento
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 70 122"
+  width="280"
+  height="488"
+>
+  <defs>
+    <!-- Drop shadow for triangle - projected downward (cyan/teal glow) -->
+    <filter id="triangleShadow" x="-100%" y="-100%" width="300%" height="300%">
+      <feDropShadow dx="0" dy="8" stdDeviation="4" flood-color="#00b8d4" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Can Body (lata) - with gap at top for tab -->
+  <!-- Border: 3.1px solid, border-radius: 9px -->
+  <!-- Top line split: left side (corner to x=12.5) and right side (x=34.5 to corner) -->
+
+  <!-- Left side + bottom + right side (U shape) -->
+  <path
+    d="M 10.55 8.55
+       Q 1.55 8.55 1.55 17.55
+       L 1.55 111.45
+       Q 1.55 120.45 10.55 120.45
+       L 59.45 120.45
+       Q 68.45 120.45 68.45 111.45
+       L 68.45 17.55
+       Q 68.45 8.55 59.45 8.55"
+    fill="none"
+    stroke="#00ff88"
+    stroke-width="3.1"
+  />
+
+  <!-- Top line - left part (before tab) -->
+  <line x1="10.55" y1="8.55" x2="12.5" y2="8.55" stroke="#00ff88" stroke-width="3.1"/>
+
+  <!-- Top line - right part (after tab) -->
+  <line x1="34.5" y1="8.55" x2="59.45" y2="8.55" stroke="#00ff88" stroke-width="3.1"/>
+
+  <!-- Extended bottom curve for can shape -->
+  <path
+    d="M 1.55 102 Q 1.55 120.45 19.55 120.45 L 50.45 120.45 Q 68.45 120.45 68.45 102"
+    fill="none"
+    stroke="#00ff88"
+    stroke-width="3.1"
+  />
+
+  <!-- Lid (tampa superior) -->
+  <!-- Position: top: -7px, centered, width: 59px, height: 3px -->
+  <rect
+    x="5.5"
+    y="1"
+    width="59"
+    height="3"
+    rx="1.5"
+    ry="1.5"
+    fill="#00ff88"
+  />
+
+  <!-- Tab (aba/puxador) -->
+  <!-- Position: top: -4px, right: 37px, width: 19px, height: 10px -->
+  <!-- right: 37px means x = 70 - 37 - 19 = 14 -->
+  <rect
+    x="14"
+    y="4"
+    width="19"
+    height="10"
+    rx="2"
+    ry="2"
+    fill="none"
+    stroke="#00ff88"
+    stroke-width="2.25"
+  />
+
+  <!-- Arrow Triangle (seta de crescimento) -->
+  <!-- CSS border triangle: border-left: 22px, border-right: 9px, border-bottom: 19px -->
+  <!-- Position: top: 30%, left: 68% of can body -->
+  <!-- Transform: translateX(-30%) translateY(-55%) rotate(-220deg) -->
+  <!--
+    Calculation:
+    - Can body starts at y=8.55, height=111.9 → 30% = 8.55 + (111.9 * 0.30) = 42.12
+    - Can body starts at x=1.55, width=66.9 → 68% = 1.55 + (66.9 * 0.68) = 47.04
+    - Triangle width=31px (22+9), height=19px
+    - translateX(-30%) = -9.3px, translateY(-55%) = -10.45px
+    - Final position: x=47.04-9.3=37.74, y=42.12-10.45=31.67
+  -->
+  <g filter="url(#triangleShadow)">
+    <polygon
+      points="0,19 22,0 31,19"
+      fill="#00ff88"
+      transform="translate(37.7, 31.7) rotate(-220, 15.5, 9.5)"
+    />
+  </g>
+</svg>
